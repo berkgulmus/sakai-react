@@ -11,5 +11,10 @@ export const CustomerService = {
         return fetch('/demo/data/customers-large.json', { headers: { 'Cache-Control': 'no-cache' } })
             .then((res) => res.json())
             .then((d) => d.data as Demo.Customer[]);
+    },
+    async test() {
+        const res = await fetch('/api/customers', { headers: { 'Cache-Control': 'no-cache' } });
+        const d = await res.json();
+        return d;
     }
 };
