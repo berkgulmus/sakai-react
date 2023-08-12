@@ -5,6 +5,7 @@ import { MyClient } from '../myClient';
 export async function GET() {
     const client = new MyClient();
     const users = await client.getClient().user.findMany();
+    console.log(users);
     return NextResponse.json(users);
 }
 
